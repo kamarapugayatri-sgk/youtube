@@ -1,0 +1,24 @@
+import React from 'react';
+const movies = [
+  { id: 1, title: 'Avengers', img: 'https://placeholder.com' },
+  { id: 2, title: 'Mandalorian', img: 'https://placeholder.com' },
+  { id: 3, title: 'Loki', img: 'https://placeholder.com' }
+];
+function App() {
+  return (
+    <div style={{ backgroundColor: '#0c111b', color: 'white', minHeight: '100vh', fontFamily: 'Arial' }}>
+      <nav style={{ padding: '20px', borderBottom: '1px solid #333' }}>
+        <h1 style={{ color: '#1f80e0' }}>HOTSTAR CLONE</h1>
+      </nav>
+      <div style={{ padding: '50px' }}>
+        <h2>Trending Now</h2>
+        <div style={{ display: 'flex', gap: '20px' }}>
+          {movies.map(m => (
+            <div key={m.id}><img src={m.img} alt={m.title} style={{ borderRadius: '10px' }} /><p>{m.title}</p></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+export default App;
